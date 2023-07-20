@@ -1,0 +1,46 @@
+<nav class="navbar navbar-light bg-light m-2">
+  <h1 class="h2 ps-1 page-title"><strong>Companies</strong></h1>
+</nav>
+<main class="content">
+  <div class="row p-3 bg-white">
+    <form [formGroup]="companydata" (ngSubmit)="save(companydata.value)">
+      <div class="row g-3">
+
+        <div class="col-md-4">
+          <label class="form-label">COMPANY<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" formControlName="name" placeholder="COMPANY" />
+        </div>
+
+
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <a class="btn btn-danger ms-2" routerLink="/admin/businesses">Cancel</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row mt-2 p-3 bg-white">
+  <table class="table table-bordered table-hover border-dark shadow-lg p-3 mb-5 ">
+    <thead>
+      <tr class="text-center">
+        <th style="width: 20px;"></th>
+        <th style="width: 20px;"></th>
+        <th>No</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="text-center" *ngFor="let c of companies; let i = index">
+        <td><button class="btn btn-success" (click)="edit(c.id)"><i class="fa fa-edit"></i></button></td>
+        <td> <button class="btn btn-danger" (click)="info(c.id)"><i class="fa fa-trash"></i></button></td>
+        <td>{{i + 1}}</td>
+        <td>{{c.name}}</td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+</main>
+
+
+
+

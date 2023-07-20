@@ -1,0 +1,148 @@
+<nav id="sidebar" class="sidebar js-sidebar">
+  <div class="sidebar-content js-simplebar" style="overflow-y: auto;">
+    <a class="sidebar-brand" href="/dashboard">
+      <span class="align-middle">AIDMOS</span>
+    </a>
+    <ul class="sidebar-nav">
+      <li class="sidebar-item">
+        <a class="sidebar-link" routerLink="/dashboard/dashboard">
+          <i class="align-middle" data-feather="sliders"></i><i class="fa fa-users"></i> <span class="align-middle">Dashboard</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="nav-link collapsed sidebar-link" data-bs-target="#components-nav-1" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><i class="fa fa-list"></i> <span>Admin</span> <i class="ms-2 fa fa-arrow-right"></i>
+        </a>
+        <ul id="components-nav-1" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/admin/businesses" class="link-dark sidebar-link">
+            <span>Businesses</span>
+            </a>
+          </li>
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/admin/financialyears" class="link-dark sidebar-link">
+            <span>Financial Years</span>
+            </a>
+          </li>
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/admin/advertisements" class="link-dark sidebar-link">
+            <span>Advertisements</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-item">
+        <a class="nav-link collapsed sidebar-link" data-bs-target="#components-nav-2" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><i class="fa fa-list"></i> <span>Configuration</span> <i class="ms-2 fa fa-arrow-right"></i>
+        </a>
+        <ul id="components-nav-2" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/admin/modules" class="link-dark sidebar-link">
+            <span>Modules</span>
+            </a>
+          </li>
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/admin/menus" class="link-dark sidebar-link">
+            <span>Menus</span>
+            </a>
+          </li>
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/admin/modulemenumapping" class="link-dark sidebar-link">
+            <span>Module-Menus Mapping</span>
+            </a>
+          </li>
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/admin/usermodulemapping" class="link-dark sidebar-link">
+            <span>User-Module Mapping</span>
+            </a>
+          </li>
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/admin/financialyears" class="link-dark sidebar-link">
+            <span>Financial Years</span>
+            </a>
+          </li>
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/admin/modulemenumapping" class="link-dark sidebar-link">
+            <span>Towns</span>
+            </a>
+          </li>
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/accounting/schedules" class="link-dark sidebar-link">
+            <span>Primary Groups</span>
+            </a>
+          </li>
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/accounting/groups" class="link-dark sidebar-link">
+            <span>Groups</span>
+            </a>
+          </li>
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/accounting/ledgers" class="link-dark sidebar-link">
+            <span>Ledgers</span>
+            </a>
+          </li>
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/admin/settings" class="link-dark sidebar-link">
+            <span>Settings</span>
+            </a>
+          </li>
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/accounting/transactiontypes" class="link-dark sidebar-link">
+            <span>Transaction Types</span>
+            </a>
+          </li>
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/admin/states" class="link-dark sidebar-link">
+            <span>States</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-item">
+        <a class="nav-link collapsed sidebar-link" data-bs-target="#components-nav-3" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><i class="fa fa-list"></i> <span>Master</span> <i class="ms-2 fa fa-arrow-right"></i>
+        </a>
+        <ul id="components-nav-3" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/masters/companies" class="link-dark sidebar-link">
+            <span>Companies</span>
+            </a>
+          </li>
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/masters/units" class="link-dark sidebar-link">
+            <span>Units</span>
+            </a>
+          </li>
+         
+        </ul>
+      </li>
+      <li class="sidebar-item">
+        <a class="nav-link collapsed sidebar-link" data-bs-target="#components-nav-4" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><i class="fa fa-list"></i> <span>Voucher</span> <i class="ms-2 fa fa-arrow-right"></i>
+        </a>
+        <ul id="components-nav-4" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/voucher/salereturn" class="link-dark sidebar-link">
+            <span>Salereturn</span>
+            </a>
+          </li>
+          
+         
+        </ul>
+      </li>
+      <!-- <li class="sidebar-item">
+        <a class="nav-link collapsed sidebar-link" data-bs-target="#components-nav-3" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><i class="fa fa-list"></i> <span>Accounting</span> <i class="ms-2 fa fa-arrow-right"></i>
+        </a>
+        <ul id="components-nav-3" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="sidebar-item list-group-item">
+            <a routerLink="/accounting/transactiontypes" class="link-dark sidebar-link">
+            <span>Transaction Types</span>
+            </a>
+          </li>
+
+        </ul>
+      </li> -->
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,85 @@
+<nav class="navbar navbar-light bg-light m-2">
+  <h1 class="h2 ps-1 page-title"><strong>Menus</strong></h1>
+</nav>
+<main class="content">
+  <div class="row p-3 bg-white">
+    <form [formGroup]="menudata" (ngSubmit)="save(menudata.value)">
+      <div class="row g-3">
+        <!-- <div class="col-md-1">
+          <label class="form-label">Menu ID<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" formControlName="menuid" />
+        </div> -->
+        <div class="col-md-4">
+          <label class="form-label">Menu Text: *<span *ngIf="menudata.controls.menutext.touched && menudata.controls.menutext.invalid" class="text-danger small">Please Enter Menu Text</span></label>
+          <input type="text" class="form-control" formControlName="menutext" />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Show Under Menu: *<span *ngIf="menudata.controls.showundermenu.touched && menudata.controls.showundermenu.invalid" class="text-danger small">Please Enter Show Under Menu</span></label>
+          <select class="form-control" formControlName="showundermenu">
+            <option value="">--Select Menu--</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Form To Open: *<span *ngIf="menudata.controls.formtoopen.touched && menudata.controls.formtoopen.invalid" class="text-danger small">Please Enter Form To Open</span></label>
+          <input type="text" class="form-control" formControlName="formtoopen" />
+        </div>
+        <div class="col-md-4 mt-4 text-center">
+          <label class="form-label mt-3 align-middle">Have Submenus: *<span *ngIf="menudata.controls.havesubmenus.touched && menudata.controls.havesubmenus.invalid" class="text-danger small">Please Enter Have Submenus</span></label>
+          <label class="switch ms-2">
+            <input type="checkbox" checked formControlName="havesubmenus">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Sequence No: *<span *ngIf="menudata.controls.sequenceno.touched && menudata.controls.sequenceno.invalid" class="text-danger small">Please Enter Sequence No</span></label>
+          <input type="text" class="form-control" formControlName="sequenceno">
+        </div>
+        <div class="col-md-4">
+          <label for="inputAddress2" class="form-label">Icon: *<span *ngIf="menudata.controls.icon.touched && menudata.controls.icon.invalid" class="text-danger small">Please Enter Icon</span></label>
+          <input type="text" class="form-control" formControlName="icon">
+        </div>
+
+
+
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary" [disabled]="!menudata.valid">Save</button>
+          <a class="btn btn-danger ms-2" routerLink="/admin/businesses">Cancel</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row mt-2 p-3 bg-white">
+    <div class="col-md-12">
+      <!-- <button class="btn btn-danger" (click)="delete(1)"><i class="fa fa-trash"></i></button> -->
+      <table class="table table-bordered table-hover border-dark shadow-lg p-3 mb-5">
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Sr.No</th>
+            <th>Menu Text</th>
+            <th>Under Menu</th>
+            <th>Page To Open</th>
+            <th>Sequence No</th>
+            <th>Icon</th>
+          </tr>
+        </thead>
+        <tbody class="table-white">
+          <tr *ngFor="let menu of menus; let i = index">
+            <td>
+              <button class="btn btn-success" (click)="edit(menu.id)"><i class="fa fa-edit"></i></button>
+              <button class="btn btn-danger ms-2" (click)="delete(menu.id)"><i class="fa fa-trash"></i></button>
+            </td>
+            <td>{{ i + 1}}</td>
+            <td>{{menu.menutext}}</td>
+            <td>{{menu.showundermenu}}</td>
+            <td>{{menu.formtoopen}}</td>
+            <td>{{menu.sequenceno}}</td>
+            <td>
+              <a routerLink="/admin/users/{{menu.id}}">User</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,56 @@
+<nav class="navbar navbar-light bg-light m-2">
+    <h1 class="h2 ps-1 page-title"><strong>Primary Groups</strong></h1>
+  </nav>
+  <main class="content">
+    <div class="row p-3 bg-white">
+      <form [formGroup]="scheduledata" (ngSubmit)="Save(scheduledata.value)">
+        <div class="row g-3">
+          
+          <div class="col-md-2">
+            <label class="form-label">Sr No.<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" formControlName="srno" />
+          </div>
+          <div class="col-md-5">
+            <label class="form-label">Type<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="type">
+              <option selected value="0">Balance Sheet Liability Side </option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <label class="form-label">Name<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" formControlName="name" />
+          </div>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary" [disabled]="!scheduledata.valid">Save</button>
+            <a class="btn btn-danger ms-2" routerLink="/accounting/schedules">Cancel</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="row mt-2 p-3 bg-white">
+      <div class="col-md-12">
+        <table class="table table-bordered table-hover border-dark shadow-lg p-3 mb-5">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Sr.No</th>
+              <th>Name</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody class="table-white">
+            <tr *ngFor="let sch of schedules; let i = index;">
+              <td>
+                <button class="btn btn-success" (click)="edit(sch.id)"><i class="fa fa-edit"></i></button>
+                <button class="btn btn-danger ms-2" (click)="delete(sch.id)"><i class="fa fa-trash"></i></button>
+              </td>
+              <td>{{ i + 1}}</td>
+              <td>{{sch.name}}</td>
+              <td>{{sch.type}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  

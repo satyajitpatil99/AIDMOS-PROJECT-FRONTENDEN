@@ -1,0 +1,90 @@
+<nav class="navbar navbar-light bg-light m-2">
+    <h1 class="h2 ps-1 page-title"><strong>Salereturn </strong></h1>
+  </nav>
+  <main class="content">
+    <div class="row p-3 bg-white">
+      <form>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="mb-3">
+              <label class="form-label">DATE<span class="text-danger">*</span></label>
+              <span *ngIf="saledata.controls.name.touched && saledata.controls.name.invalid"
+                class="text-danger small">Please Enter Name</span>
+              <input type="text" class="form-control" formControlName="date" />
+            </div>
+          </div>
+            <div class="col-md-4">
+              <div class="mb-3">
+                <label class="form-label">CUSTOMER<span class="text-danger">*</span></label>
+                <span *ngIf="saledata.controls.name.touched && saledata.controls.name.invalid"
+                  class="text-danger small">Please Enter Name</span>
+                  <select type="text" class="form-select" id="inputZip" formControlName="customer">
+                    <option value="Complited">select</option>
+                </select>
+               
+              </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                  <label class="form-label">SALE INVOICE<span class="text-danger">*</span></label>
+                  <span *ngIf="saledata.controls.name.touched && saledata.controls.name.invalid"
+                    class="text-danger small">Please Enter Name</span>
+                    <select type="text" class="form-select" id="inputZip" formControlName="saleinvoice">
+                        <option value="Complited">select</option>
+                    </select>
+                </div>
+              </div>
+        </div>
+      </form>
+    </div>
+    <div class="row mt-2 p-3 bg-white">
+      <div class="col-md-12">
+        <div style="overflow-x:auto;">
+        <table class="table table-bordered table-hover border-dark shadow-lg p-3 mb-5">
+          <thead>
+            <tr>
+              <th style="width: 30px;"></th>
+              <th>Product</th>
+              <th>Lot/Batch No</th>
+              <th >Mfg Date</th>
+              <th >Exp Date</th>
+              <th>Rate(With GST)</th>
+              <th style="width: 100px;">Return Quantity</th>
+              <th >Disc. %</th>
+              <th>Disc. Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+            <tr >
+                <td>1</td>
+                <td><select type="text" class="form-select">
+                    <option value="Complited">select</option>
+                </select></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="width: 100px;"><input type="text"></td>
+                <td></td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="submit" class="btn btn-success" (click)="add()" value="+ Add"></td>
+            </tr>
+          
+          
+          </tbody>
+        </table>
+    </div>
+      </div>
+    </div>
+  </main>

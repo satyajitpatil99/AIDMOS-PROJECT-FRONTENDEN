@@ -1,0 +1,314 @@
+<nav class="navbar navbar-light bg-light m-2">
+    <h1 class="h2 ps-1 page-title"><strong>Businesses Inventory & Accounting Settings</strong></h1>
+  </nav>
+  <main class="content">
+    <div class="row p-3 bg-white">
+      <form [formGroup]="businessdata" (ngSubmit)="Save(businessdata.value)">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <label class="form-label">Purchase Ledger<span class="text-danger">*</span></label>
+                <select class="form-select" formControlName="villageid">
+                  <option selected value="0">Village</option>
+                </select>
+              </div>
+          <div class="col-md-4">
+            <label class="form-label">Sale Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Village</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Sale Cash Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Village</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Purchase CGST Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Village</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Purchase SGST Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Village</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Purchase IGST Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Village</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Purchase Return CGST Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Village</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Purchase Return SGST Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Village</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Purchase Return IGST Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Village</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Sale CGST Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Village</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Sale SGST Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Village</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Sale IGST Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Village</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Round Off Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Village</option>
+            </select>
+          </div>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a class="btn btn-danger ms-2" routerLink="/admin/businesses">Cancel</a>
+          </div>
+        </div>
+      </form>
+    </div>
+   
+  </main>
+  <nav class="navbar navbar-light bg-light m-2">
+    <h1 class="h2 ps-1 page-title"><strong>Other Purchase/Sale Charges Settings</strong></h1>
+  </nav>
+  <main class="content">
+    <div class="row p-3 bg-white">
+      <form [formGroup]="businessdata" (ngSubmit)="Save(businessdata.value)">
+        <div class="row g-3">
+            <div class="col-md-2">
+                <label class="form-label">Sr No.<span class="text-danger">*</span></label>
+                <input type="number" class="form-control" formControlName="srno" />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Title<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" formControlName="title" />
+              </div>
+              <div class="col-md-3 p-2">
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked formControlName=>
+                    <label class="form-check-label" for="flexCheckChecked">
+                   Apply To Purchase
+                    </label>
+                  </div>
+              </div>
+          <div class="col-md-3 p-2">
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+               Apply To Sale
+                </label>
+              </div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Purchase Side Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="psl">
+              <option selected value="0">Village</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">GST Percent<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" formControlName="srno" />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">To<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Add</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Sale Side Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="psl">
+              <option selected value="0">Village</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">GST Percent<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" formControlName="srno" />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">To<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Add</option>
+            </select>
+          </div>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a class="btn btn-danger ms-2" routerLink="/admin/settings">Cancel</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="row mt-2 p-3 bg-white">
+        <div class="col-md-12">
+          <table class="table table-bordered table-hover border-dark shadow-lg p-3 mb-5">
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Sr.No</th>
+                <th>Title</th>
+                <th>Apply To Purchase</th>
+                <th>Purchase Ledger</th>
+                <th>Purchase GST Percent</th>
+                <th>To Purchase</th>
+                <th>Sale Ledger</th>
+                <th>Sale GST Percent</th>
+                <th>To Sale</th>
+              </tr>
+            </thead>
+            <tbody class="table-white">
+              <tr *ngFor="let business of businesses; let i = index;">
+                <td>
+                  <button class="btn btn-success" (click)="edit(business.id)"><i class="fa fa-edit"></i></button>
+                  <button class="btn btn-danger" (click)="delete(business.id)"><i class="fa fa-trash"></i></button>
+                </td>
+                <td>{{ i + 1}}</td>
+                <td>{{business.regdate | date}}</td>
+                <td>{{business.businessname}}</td>
+                <td>{{business.ownername}}</td>
+                <td>{{business.mobileno}}</td>
+                <td>{{business.status}}</td>
+                <td>
+                  <a routerLink="/admin/users/{{business.id}}">User</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+   
+  </main>
+  <nav class="navbar navbar-light bg-light m-2">
+    <h1 class="h2 ps-1 page-title"><strong>Debit/Credit Note Charges Settings</strong></h1>
+  </nav>
+  <main class="content">
+    <div class="row p-3 bg-white">
+      <form [formGroup]="businessdata" (ngSubmit)="Save(businessdata.value)">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <label class="form-label">Title<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" formControlName="title" />
+              </div>
+              <div class="col-md-4 p-2">
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                   Apply To Debitnote
+                    </label>
+                  </div>
+              </div>
+              <div class="col-md-4 p-2">
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                   Apply To Creditnote
+                    </label>
+                  </div>
+              </div>
+          <div class="col-md-6">
+            <label class="form-label">Debit Note Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="psl">
+              <option selected value="0">Select</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">GST Percent<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" formControlName="srno" />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">To<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Add</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Credit Ledger<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="psl">
+              <option selected value="0">Select</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">GST Percent<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" formControlName="srno" />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">To<span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="villageid">
+              <option selected value="0">Add</option>
+            </select>
+          </div>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a class="btn btn-danger ms-2" routerLink="/admin/businesses">Cancel</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="row mt-2 p-3 bg-white">
+        <div class="col-md-12">
+          <table class="table table-bordered table-hover border-dark shadow-lg p-3 mb-5">
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Sr.No</th>
+                <th>Title</th>
+                <th>Apply To Debitnote</th>
+                <th>Debitnote Ledger</th>
+                <th>Debitnote GST Percent</th>
+                <th>Apply To Credit Note </th>
+                <th>Credit Note Ledger</th>
+                <th>Credit GST Percent</th>
+                <th>To Credit</th>
+              </tr>
+            </thead>
+            <tbody class="table-white">
+              <tr *ngFor="let business of businesses; let i = index;">
+                <td>
+                  <button class="btn btn-success" (click)="edit(business.id)"><i class="fa fa-edit"></i></button>
+                  <button class="btn btn-danger" (click)="delete(business.id)"><i class="fa fa-trash"></i></button>
+                </td>
+                <td>{{ i + 1}}</td>
+                <td>{{business.regdate | date}}</td>
+                <td>{{business.businessname}}</td>
+                <td>{{business.ownername}}</td>
+                <td>{{business.mobileno}}</td>
+                <td>{{business.status}}</td>
+                <td>
+                  <a routerLink="/admin/users/{{business.id}}">User</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+   
+  </main>
+  
+  

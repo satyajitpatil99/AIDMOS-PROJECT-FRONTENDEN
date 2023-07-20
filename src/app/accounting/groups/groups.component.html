@@ -1,0 +1,67 @@
+<nav class="navbar navbar-light bg-light m-2">
+    <h1 class="h2 ps-1 page-title"><strong>Groups</strong></h1>
+</nav>
+<main class="content">
+    <div class="row p-3 bg-white">
+        <form [formGroup]="formdata" (ngSubmit)="save(formdata.value)">
+            <div class="row g-3">
+
+                <div class="col-md-2">
+                    <label class="form-label">Sr.No<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" formControlName="srno" />
+                </div>
+                <div class="col-md-10">
+                    <label class="form-label">Name<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" formControlName="name" />
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Primary Groups<span class="text-danger">*</span></label>
+                    <select class="form-select" formControlName="primarygroup">
+                        <option selected value="0"></option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Groups<span class="text-danger">*</span></label>
+                    <select class="form-select" formControlName="group">
+                        <option selected value="0"></option>
+                    </select>
+                </div>
+
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a class="btn btn-danger ms-2" routerLink="/admin/businesses">Cancel</a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="row mt-2 p-3 bg-white">
+        <div class="col-md-12">
+            <table class="table table-bordered table-hover border-dark shadow-lg p-3 mb-5">
+                <thead>
+
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Primary Group</th>
+                    <th> Under Group </th>
+                    <th> Type </th>
+                </thead>
+                <tbody class="table-white">
+                    <tr *ngFor="let gp of groups, let i = index">
+                        <td>
+                            <button class="btn btn-success" (click)="(groups.id)">Edit<i class="fa fa-edit"></i></button>
+                            <button class="btn btn-danger" (click)="(groups.id)">Delete<i class="fa fa-trash"></i></button>
+                        </td>
+                        <td>{{i + 1}}</td>
+                        <td>{{gp.name}}</td>
+                        <td>{{gp.groupid}}</td>
+                        <td>{{gp.undergroup}}</td>
+                        <td>{{gp.type}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>

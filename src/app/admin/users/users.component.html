@@ -1,0 +1,77 @@
+<nav class="navbar navbar-light bg-light m-2">
+  <h1 *ngIf="business" class="h2 ps-1 page-title"><strong>Users - {{ business.businessname  }}</strong></h1>
+</nav>
+<main class="content">
+  <div class="row p-3 bg-white">
+    <form [formGroup]="userdata" (ngSubmit)="save(userdata.value)">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label class="form-label">Name<span class="text-danger">*</span><span *ngIf="userdata.controls.name.touched && userdata.controls.name.invalid" class="text-danger small">Please Enter Name </span></label>
+          <input type="text" class="form-control" formControlName="name" />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Mobile No<span class="text-danger">*</span><span *ngIf="userdata.controls.mobileno.touched && userdata.controls.mobileno.invalid" class="text-danger small">Please Enter Mobile No </span></label>
+          <input type="text" class="form-control" formControlName="mobileno" />
+        </div>
+        <div class="col-md-4">
+          <label for="inputAddress2" class="form-label">Email<span class="text-danger">*</span><span *ngIf="userdata.controls.email.touched && userdata.controls.email.invalid" class="text-danger small">Please Enter Email </span></label>
+          <input type="email" class="form-control" formControlName="email" />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">User Type<span class="text-danger">*</span><span *ngIf="userdata.controls.usertype.touched && userdata.controls.usertype.invalid" class="text-danger small">Please Select Usertype </span></label>
+          <select class="form-select" formControlName="usertype">
+            <option selected value="Owner">Owner</option>
+            <option value="Clerk">Clerk</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Username<span class="text-danger">*</span><span *ngIf="userdata.controls.username.touched && userdata.controls.username.invalid" class="text-danger small">Please Enter User Name </span></label>
+          <input type="text" class="form-control" formControlName="username" />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Password<span class="text-danger">*</span><span *ngIf="userdata.controls.password.touched && userdata.controls.password.invalid" class="text-danger small">Please Enter Password </span></label>
+          <input type="text" class="form-control" formControlName="password" />
+        </div>
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary" [disabled]="!userdata.valid">Save</button>
+          <a class="btn btn-danger ms-2" routerLink="/admin/businesses">Cancel</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row mt-2 p-3 bg-white">
+    <div class="col-md-12">
+      <table class="table table-bordered table-hover border-dark shadow-lg p-3 mb-5">
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Sr.No</th>
+            <th>Name</th>
+            <th>User Name</th>
+            <th>User Type</th>
+            <th>Mobile No</th>
+            <th>Email</th>
+            <!-- <th>Users</th> -->
+          </tr>
+        </thead>
+        <tbody class="table-white">
+          <tr *ngFor="let user of users; let i = index;">
+            <td>
+              <button class="btn btn-success" (click)="edit(user.id)"><i class="fa fa-edit"></i></button>
+              <button class="btn btn-danger ms-2" (click)="delete(user.id)"><i class="fa fa-trash"></i></button>
+            </td>
+            <td>{{ i + 1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.usertype}}</td>
+            <td>{{user.mobileno}}</td>
+            <td>{{user.email}}</td>
+            <!-- <td>
+              <a routerLink="/admin/users/{{business.id}}">User</a>
+            </td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,64 @@
+<nav class="navbar navbar-light bg-light m-2">
+  <h1 class="h2 ps-1 page-title"><strong>Modules</strong></h1>
+</nav>
+<main class="content">
+  <div class="row p-3 bg-white">
+    <form [formGroup]="formdata" (ngSubmit)="save(formdata.value)">
+      <div class="row g-3">
+        <div class="col-md-8">
+          <label class="form-label">Title<span class="text-danger">*</span></label>
+          <span *ngIf="formdata.controls.title.touched && formdata.controls.title.invalid"
+            class="text-danger small">Please Enter Name</span>
+          <input type="text" class="form-control" formControlName="title">
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Image</label>
+          <input class="form-control" formControlName="selectimage" type="file" />
+        </div>
+        <div class="col-md-8">
+          <label class="form-label">Landing Page<span class="text-danger">*</span></label>
+          <span *ngIf="formdata.controls.landingpage.touched && formdata.controls.landingpage.invalid"
+            class="text-danger small">Please Enter Landing Page</span>
+          <input type="text" class="form-control" formControlName="landingpage" />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Sr No<span class="text-danger">*</span></label>
+          <span *ngIf="formdata.controls.srno.touched && formdata.controls.srno.invalid"
+            class="text-danger small">Please Enter Sr No</span>
+          <input type="number" class="form-control" formControlName="srno" />
+        </div>
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary" [disabled]="!formdata.valid">Save</button>
+          <a class="btn btn-danger ms-2" routerLink="/admin/modules">Cancel</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row mt-2 p-3 bg-white">
+    <div class="col-md-12">
+      <table class="table table-bordered table-hover border-dark shadow-lg p-3 mb-5 table">
+        <thead>
+          <tr>
+            <th style="width:100px;">Action</th>
+            <th>Sr.No.</th>
+            <th>Title</th>
+            <th>Image</th>
+            <th>Landing Page</th>
+          </tr>
+        </thead>
+        <tbody class="table-white">
+          <tr *ngFor="let data of result; let i = index;">
+            <td>
+              <button class="btn btn-sm btn-success" (click)="edit(data.id)"><i class="fa fa-edit"></i></button>
+              <button class="btn btn-sm btn-danger ms-2" (click)="delete(data.id)"><i class="fa fa-trash"></i></button>
+            </td>
+            <td>{{ i + 1}}</td>
+            <td>{{data.title}}</td>
+            <td>{{data.selectimage}}</td>
+            <td>{{data.landingpage}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
